@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const supabase = require("./src/config/supabase");
+const supabase = require("./config/supabase");
 const { config } = require("dotenv");
 config();
 
@@ -9,9 +9,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const userRoutes = require("./src/router/userRoutes");
-const productRoutes = require("./src/router/productRoutes");
-const transactionRoutes = require("./src/router/transactionRoutes");
+const userRoutes = require("./router/userRoutes");
+const productRoutes = require("./router/productRoutes");
+const transactionRoutes = require("./router/transactionRoutes");
 
 app.use("/api/transactions", transactionRoutes);
 app.use("/api/user/:userid", transactionRoutes);
